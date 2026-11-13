@@ -1,13 +1,80 @@
-# Changelog
+# Banished 功能模组合集 更新日志
 
-## 1.0.0 (2026-11-13)
+> **Banished 功能模组合集** — 面向 Banished 1.0.7（build 170910）的六项玩法调整。
+> 每个功能一个独立 .pkm，可单独启用与删除。
 
-First public release.
+## v1.0.0 (2026·11)
 
-- Added Storage x10 (storage10x.pkm)
-- Added Infinite Mine and Quarry (infinitemine.pkm)
-- Added Pasture x2 (pasture2x.pkm)
-- Added Bigger Resource Limit Input (limit8digit.pkm)
-- Added Terrain Tools (terratools.pkm)
-- Added Tombstone Lifetime Halved (tombstonehalf.pkm)
-- Added optional exe patcher for the 999999 resource limit cap
+> 首个公开版本，六项调整各自独立成包，其中地形工具是唯一需要手动操作的功能。
+
+---
+
+### 存储与生产
+
+> 这一组对应的是中后期反复出现的容量与枯竭问题。
+
+- 新增了存储容量十倍
+- 新增了矿井与采石场不枯竭
+- 新增了牧场容量两倍
+
+---
+
+### 地形工具
+
+> 坡地不能建造的判定在引擎里，这一组换了个方向绕开它。
+
+- 新增了地形抬高 1 格
+- 新增了地形降低 1 格
+- 新增了地形整平
+- 新增了零造价与即时完成
+- 新增了可建在水面的地块许可
+
+---
+
+### 资源上限
+
+> 输入框位数与硬上限是两件事，分开处理。
+
+- 新增了资源上限输入框 8 位
+- 新增了可执行文件补丁脚本
+- 新增了补丁前自动备份
+- 新增了一键还原脚本
+
+---
+
+### 墓碑
+
+> 公墓被旧墓碑占满是中后期的常见困扰。
+
+- 新增了墓碑留存时间减半
+- 新增了墓碑寿命随机容差同步减半
+
+---
+
+### 文档与说明
+
+> 第一次发布，安装与冲突范围需要写清楚。
+
+- 新增了中英双语说明
+- 新增了兼容性对照表
+- 新增了七组常见问题
+- 新增了已知限制清单
+
+---
+
+### 升级注意事项
+
+> 首次安装直接放进 WinData 即可；之后覆盖同名文件。
+
+- 先完全关闭游戏再复制 pkm
+- 在模组列表里勾选后生效
+- 存储与牧场只对新建建筑生效
+- 资源上限突破需另打 exe 补丁
+- 与大型合集模组不兼容
+
+---
+
+### 构建
+
+- 版本号更新至 v1.0.0
+- 发布包 banished-dsh-mods-v1.0.0.zip
