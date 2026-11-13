@@ -1,0 +1,5 @@
+*.orig_backup
+*.exe
+*.pkg
+*.dmp
+__pycache__/
