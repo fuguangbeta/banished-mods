@@ -1,14 +1,14 @@
-# Banished 功能模组合集 v1.1.0
+# Banished 功能模组合集 v1.2.0
 
 [![版本](https://img.shields.io/github/v/release/fuguangbeta/banished-mods?label=%E7%89%88%E6%9C%AC&color=blue)](https://github.com/fuguangbeta/banished-mods/releases) ![游戏](https://img.shields.io/badge/%E6%B8%B8%E6%88%8F-Banished%201.0.7%20%28170910%29-8B5A2B) ![平台](https://img.shields.io/badge/%E5%B9%B3%E5%8F%B0-Windows-0078D4) [![许可](https://img.shields.io/github/license/fuguangbeta/banished-mods?label=%E8%AE%B8%E5%8F%AF)](https://github.com/fuguangbeta/banished-mods/blob/main/LICENSE) [![Star](https://img.shields.io/github/stars/fuguangbeta/banished-mods?label=Star&color=yellow)](https://github.com/fuguangbeta/banished-mods/stargazers) [![总下载](https://img.shields.io/github/downloads/fuguangbeta/banished-mods/total?label=%E6%80%BB%E4%B8%8B%E8%BD%BD&color=2ea44f)](https://github.com/fuguangbeta/banished-mods/releases)
 
 ## 关于本模组 · *About These Mods*
 
-这是一组针对 Banished 1.0.7（build 170910）的轻量玩法调整，一共十个，每个功能一个独立文件。它们只改动游戏原有的几处数值与组件参数，不新增建筑、不替换贴图、不引入任何外部素材，六个加起来不到 30 KB。
+这是一组针对 Banished 1.0.7（build 170910）的轻量玩法调整，一共十二个，每个功能一个独立文件。它们只改动游戏原有的几处数值与组件参数，不新增建筑、不替换贴图、不引入任何外部素材，六个加起来不到 30 KB。
 
 设计上刻意保持「一个功能一个开关」：想要什么就放什么进去，不想要直接删掉对应文件，彼此之间没有依赖。模组一旦做成合集，用户就很难只留其中一两项；拆开之后，取舍权在自己手里。
 
-十个模组都建立在同一个前提上：**只对之后新建的东西生效**。已经建好的谷仓不会因为装了模组就突然变大，已经生成的墓碑也不会因为改了寿命而提前消失。这是存档本身的机制，不是模组的取舍。
+十二个模组都建立在同一个前提上：**只对之后新建的东西生效**。已经建好的谷仓不会因为装了模组就突然变大，已经生成的墓碑也不会因为改了寿命而提前消失。这是存档本身的机制，不是模组的取舍。
 
 有一点需要提前说明：这些模组采用「覆盖原版模板」的方式实现，所以与修改同类内容的模组天然冲突。如果你在玩 MegaMod、Colonial Charter 这类大型合集，基本上装不上。具体见第 5 节。
 
@@ -27,9 +27,9 @@ The terrain tools are the only part that needs hands-on use. They borrow the qua
 ---
 ## 1. 模组清单 · *Mod List*
 
-十个文件都放在 mods/ 目录下。
+十二个文件都放在 mods/ 目录下。
 
-All ten files live in mods/.
+All twelve files live in mods/.
 
 | 文件 · File | 名称 · Name | 改动 · What it changes |
 |---|---|---|
@@ -43,6 +43,8 @@ All ten files live in mods/.
 | clothingwarmth.pkm | 衣物抗寒提升 | 每月受寒量 无衣 12 / 普通 8→6 / 冬衣 5→3 |
 | schoolcapacity.pkm | 学校容量提升 | 学校在册学生上限 20→40 |
 | hospitalcapacity.pkm | 医院容量提升 | 诊所收治病人上限 30→60 |
+| tunneloptimize.pkm | 隧道优化 | 修复隧道中段穿模，并允许拆除后原位重建 |
+| fishdockradius.pkm | 渔场范围提升 | 渔业码头作业半径 14→20（覆盖面积约 2 倍） |
 
 ---
 
@@ -110,6 +112,22 @@ A school now holds 40 students instead of 20, so one teacher can educate more ch
 
 The doctor house now attends to 60 patients instead of 30, which shortens the queue during an outbreak.
 
+### 1.11 隧道优化 · *Tunnel Optimisation*
+
+隧道建在较矮的山坡上时，人走到中段会从地表露出来。原因是隧道中间段没有参与地形处理，人按山坡表面高度行走。这个模组给中间段补上 1×1 的地形处理，人走在线路内部，被上方的岩体挡住；同时允许在被挖过的地面重新修建隧道。
+
+另外，处理地形用的网格必须是一格大小 —— 用整段隧道拱顶会连着周围山体一起削平。
+
+On low hills, citizens used to surface in the middle of a tunnel because the interior sections never took part in the terrain pass. This mod gives each section a 1x1 terrain step, so the walk stays under the rock; it also lets a demolished tunnel be rebuilt on the same spot.
+
+The mesh used for that step has to be one tile wide; using the tunnel arch instead carves the surrounding mountain as well.
+
+### 1.12 渔场范围提升 · *Bigger Fishing Radius*
+
+渔业码头的作业半径原本只有 14 格，是全游戏最小的服务范围，产量因此偏低。扩大到 20 格后，覆盖水面面积约翻倍。
+
+The fishing dock works on a 14-tile radius, the smallest service area in the game, which kept its yield low. At 20 tiles the covered water roughly doubles.
+
 ---
 ## 2. 安装与卸载 · *Installation and Removal*
 
@@ -133,7 +151,7 @@ The path looks like D:/Banished/WinData/. Copying a file in installs it; deletin
 
 ### 2.2 卸载 · *Removal*
 
-删掉 WinData 下对应的 .pkm 即可。十个文件互不依赖，可以只删其中一个。
+删掉 WinData 下对应的 .pkm 即可。十二个文件互不依赖，可以只删其中一个。
 
 Delete the matching .pkm from WinData. The six files do not depend on each other, so removing one leaves the rest working.
 
@@ -236,7 +254,7 @@ The other five mods work fine without the patch; the limit simply stays at 99999
 
 ## 5. 兼容性 · *Compatibility*
 
-十个模组都通过覆盖原版模板实现，所以只要别的模组改了同一处内容，就会冲突。
+十二个模组都通过覆盖原版模板实现，所以只要别的模组改了同一处内容，就会冲突。
 
 All six work by overriding vanilla templates, so any mod that touches the same content will conflict.
 
@@ -251,6 +269,8 @@ All six work by overriding vanilla templates, so any mod that touches the same c
 | 衣物抗寒提升 | 任何修改居民受寒量的模组 |
 | 学校容量提升 | 任何修改学校建筑的模组 |
 | 医院容量提升 | 任何修改诊所建筑的模组 |
+| 隧道优化 | 任何修改隧道建造规则或隧道分段模板的模组 |
+| 渔场范围提升 | 任何修改渔业码头作业半径的模组 |
 | 地形工具 | 任何同样占用 debug / noise / capture 三个隐藏工具栏位置的模组 |
 
 大型合集基本等同全冲突：MegaMod、Colonial Charter、RK Editor Choice 等。
