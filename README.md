@@ -1,14 +1,14 @@
-# Banished 功能模组合集 v1.0.0
+# Banished 功能模组合集 v1.1.0
 
 [![版本](https://img.shields.io/github/v/release/fuguangbeta/banished-mods?label=%E7%89%88%E6%9C%AC&color=blue)](https://github.com/fuguangbeta/banished-mods/releases) ![游戏](https://img.shields.io/badge/%E6%B8%B8%E6%88%8F-Banished%201.0.7%20%28170910%29-8B5A2B) ![平台](https://img.shields.io/badge/%E5%B9%B3%E5%8F%B0-Windows-0078D4) [![许可](https://img.shields.io/github/license/fuguangbeta/banished-mods?label=%E8%AE%B8%E5%8F%AF)](https://github.com/fuguangbeta/banished-mods/blob/main/LICENSE) [![Star](https://img.shields.io/github/stars/fuguangbeta/banished-mods?label=Star&color=yellow)](https://github.com/fuguangbeta/banished-mods/stargazers) [![总下载](https://img.shields.io/github/downloads/fuguangbeta/banished-mods/total?label=%E6%80%BB%E4%B8%8B%E8%BD%BD&color=2ea44f)](https://github.com/fuguangbeta/banished-mods/releases)
 
 ## 关于本模组 · *About These Mods*
 
-这是一组针对 Banished 1.0.7（build 170910）的轻量玩法调整，一共六个，每个功能一个独立文件。它们只改动游戏原有的几处数值与组件参数，不新增建筑、不替换贴图、不引入任何外部素材，六个加起来不到 30 KB。
+这是一组针对 Banished 1.0.7（build 170910）的轻量玩法调整，一共十个，每个功能一个独立文件。它们只改动游戏原有的几处数值与组件参数，不新增建筑、不替换贴图、不引入任何外部素材，六个加起来不到 30 KB。
 
 设计上刻意保持「一个功能一个开关」：想要什么就放什么进去，不想要直接删掉对应文件，彼此之间没有依赖。模组一旦做成合集，用户就很难只留其中一两项；拆开之后，取舍权在自己手里。
 
-六个模组都建立在同一个前提上：**只对之后新建的东西生效**。已经建好的谷仓不会因为装了模组就突然变大，已经生成的墓碑也不会因为改了寿命而提前消失。这是存档本身的机制，不是模组的取舍。
+十个模组都建立在同一个前提上：**只对之后新建的东西生效**。已经建好的谷仓不会因为装了模组就突然变大，已经生成的墓碑也不会因为改了寿命而提前消失。这是存档本身的机制，不是模组的取舍。
 
 有一点需要提前说明：这些模组采用「覆盖原版模板」的方式实现，所以与修改同类内容的模组天然冲突。如果你在玩 MegaMod、Colonial Charter 这类大型合集，基本上装不上。具体见第 5 节。
 
@@ -27,9 +27,9 @@ The terrain tools are the only part that needs hands-on use. They borrow the qua
 ---
 ## 1. 模组清单 · *Mod List*
 
-六个文件都放在 mods/ 目录下。
+十个文件都放在 mods/ 目录下。
 
-All six files live in mods/.
+All ten files live in mods/.
 
 | 文件 · File | 名称 · Name | 改动 · What it changes |
 |---|---|---|
@@ -39,6 +39,10 @@ All six files live in mods/.
 | limit8digit.pkm | 资源上限提升 | 资源上限输入框最大位数 6→8 位 |
 | terratools.pkm | 地形工具 | 三个 1×1 工具：抬高 1 格 / 降低 1 格 / 整平 |
 | tombstonehalf.pkm | 墓碑留存时间减半 | 墓碑寿命 60→30 个月，容差 12→6 |
+| tooldurability.pkm | 工具寿命提升 | 铁质工具耐久 100→200、钢制 200→400 |
+| clothingwarmth.pkm | 衣物抗寒提升 | 每月受寒量 无衣 12 / 普通 8→6 / 冬衣 5→3 |
+| schoolcapacity.pkm | 学校容量提升 | 学校在册学生上限 20→40 |
+| hospitalcapacity.pkm | 医院容量提升 | 诊所收治病人上限 30→60 |
 
 ---
 
@@ -82,6 +86,30 @@ Three 1x1 tools for single-tile terrain edits. See section 3.
 
 Tombstones stand for 60 months by default, which fills cemeteries quickly. At 30 months with a 6-month tolerance, roughly twice as many graves free up.
 
+### 1.7 工具寿命提升 · *Tool Durability*
+
+铁质工具与钢制工具的使用寿命各提升为原来的两倍：铁质从 100 提到 200，钢制从 200 提到 400。这个数值是「一件工具能顶多少工作量」，所以表现是同一个工具能干更久的活，铁匠铺的产出压力减半。
+
+Iron and steel tools both last twice as long: iron from 100 to 200, steel from 200 to 400. The value is how much work a tool provides, so a single tool covers twice as much before it wears out.
+
+### 1.8 衣物抗寒提升 · *Warmer Clothing*
+
+居民每月受寒量从「无衣 12 / 普通衣物 8 / 冬季大衣 5」调整为「12 / 6 / 3」。无衣状态保持不变，穿上衣服之后冬天能在室外待更久，冬季大衣的差距也拉开了。
+
+Monthly cold gain changes from 12 / 8 / 5 for no clothing, normal coats and winter coats to 12 / 6 / 3. Unclothed citizens are unaffected; clothed ones stay outside longer in winter.
+
+### 1.9 学校容量提升 · *Bigger School*
+
+一所学校同时容纳的学生从 20 人提到 40 人。一位老师能带更多学生，教育铺开得更快，孩子不用排队等学位。
+
+A school now holds 40 students instead of 20, so one teacher can educate more children at a time and fewer of them wait for a seat.
+
+### 1.10 医院容量提升 · *Bigger Hospital*
+
+诊所同时收治的病人从 30 人提到 60 人。疾病爆发时排队会短一些，病人恢复得也更快。
+
+The doctor house now attends to 60 patients instead of 30, which shortens the queue during an outbreak.
+
 ---
 ## 2. 安装与卸载 · *Installation and Removal*
 
@@ -105,7 +133,7 @@ The path looks like D:/Banished/WinData/. Copying a file in installs it; deletin
 
 ### 2.2 卸载 · *Removal*
 
-删掉 WinData 下对应的 .pkm 即可。六个文件互不依赖，可以只删其中一个。
+删掉 WinData 下对应的 .pkm 即可。十个文件互不依赖，可以只删其中一个。
 
 Delete the matching .pkm from WinData. The six files do not depend on each other, so removing one leaves the rest working.
 
@@ -208,7 +236,7 @@ The other five mods work fine without the patch; the limit simply stays at 99999
 
 ## 5. 兼容性 · *Compatibility*
 
-六个模组都通过覆盖原版模板实现，所以只要别的模组改了同一处内容，就会冲突。
+十个模组都通过覆盖原版模板实现，所以只要别的模组改了同一处内容，就会冲突。
 
 All six work by overriding vanilla templates, so any mod that touches the same content will conflict.
 
@@ -219,6 +247,10 @@ All six work by overriding vanilla templates, so any mod that touches the same c
 | 牧场容量提升 | 任何修改牲畜的模组 |
 | 资源上限提升 | 任何修改资源上限输入框的模组 |
 | 墓碑留存时间减半 | 任何修改墓碑的模组 |
+| 工具寿命提升 | 任何修改工具类物品的模组 |
+| 衣物抗寒提升 | 任何修改居民受寒量的模组 |
+| 学校容量提升 | 任何修改学校建筑的模组 |
+| 医院容量提升 | 任何修改诊所建筑的模组 |
 | 地形工具 | 任何同样占用 debug / noise / capture 三个隐藏工具栏位置的模组 |
 
 大型合集基本等同全冲突：MegaMod、Colonial Charter、RK Editor Choice 等。
