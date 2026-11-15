@@ -1,6 +1,6 @@
 # Banished 功能模组合集 v1.0.0
 
-[![版本](https://img.shields.io/github/v/release/fuguangbeta/banished-dsh-mods?label=%E7%89%88%E6%9C%AC&color=blue)](https://github.com/fuguangbeta/banished-dsh-mods/releases) ![游戏](https://img.shields.io/badge/%E6%B8%B8%E6%88%8F-Banished%201.0.7%20%28170910%29-8B5A2B) ![平台](https://img.shields.io/badge/%E5%B9%B3%E5%8F%B0-Windows-0078D4) [![许可](https://img.shields.io/github/license/fuguangbeta/banished-dsh-mods?label=%E8%AE%B8%E5%8F%AF)](https://github.com/fuguangbeta/banished-dsh-mods/blob/main/LICENSE) [![Star](https://img.shields.io/github/stars/fuguangbeta/banished-dsh-mods?label=Star&color=yellow)](https://github.com/fuguangbeta/banished-dsh-mods/stargazers) [![总下载](https://img.shields.io/github/downloads/fuguangbeta/banished-dsh-mods/total?label=%E6%80%BB%E4%B8%8B%E8%BD%BD&color=2ea44f)](https://github.com/fuguangbeta/banished-dsh-mods/releases)
+[![版本](https://img.shields.io/github/v/release/fuguangbeta/banished-mods?label=%E7%89%88%E6%9C%AC&color=blue)](https://github.com/fuguangbeta/banished-mods/releases) ![游戏](https://img.shields.io/badge/%E6%B8%B8%E6%88%8F-Banished%201.0.7%20%28170910%29-8B5A2B) ![平台](https://img.shields.io/badge/%E5%B9%B3%E5%8F%B0-Windows-0078D4) [![许可](https://img.shields.io/github/license/fuguangbeta/banished-mods?label=%E8%AE%B8%E5%8F%AF)](https://github.com/fuguangbeta/banished-mods/blob/main/LICENSE) [![Star](https://img.shields.io/github/stars/fuguangbeta/banished-mods?label=Star&color=yellow)](https://github.com/fuguangbeta/banished-mods/stargazers) [![总下载](https://img.shields.io/github/downloads/fuguangbeta/banished-mods/total?label=%E6%80%BB%E4%B8%8B%E8%BD%BD&color=2ea44f)](https://github.com/fuguangbeta/banished-mods/releases)
 
 ## 关于本模组 · *About These Mods*
 
@@ -313,7 +313,7 @@ Capacity is written when a building is completed. Demolish and rebuild, or start
 
 ---
 
-> [GitHub Releases](https://github.com/fuguangbeta/banished-dsh-mods/releases) — 下载最新版本 · *Download Latest Release*
+> [GitHub Releases](https://github.com/fuguangbeta/banished-mods/releases) — 下载最新版本 · *Download Latest Release*
 
 ---
 
