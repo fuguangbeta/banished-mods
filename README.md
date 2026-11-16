@@ -1,4 +1,4 @@
-# Banished 功能模组合集 v1.2.0
+# Banished 功能模组合集 v1.2.1
 
 [![版本](https://img.shields.io/github/v/release/fuguangbeta/banished-mods?label=%E7%89%88%E6%9C%AC&color=blue)](https://github.com/fuguangbeta/banished-mods/releases) ![游戏](https://img.shields.io/badge/%E6%B8%B8%E6%88%8F-Banished%201.0.7%20%28170910%29-8B5A2B) ![平台](https://img.shields.io/badge/%E5%B9%B3%E5%8F%B0-Windows-0078D4) [![许可](https://img.shields.io/github/license/fuguangbeta/banished-mods?label=%E8%AE%B8%E5%8F%AF)](https://github.com/fuguangbeta/banished-mods/blob/main/LICENSE) [![Star](https://img.shields.io/github/stars/fuguangbeta/banished-mods?label=Star&color=yellow)](https://github.com/fuguangbeta/banished-mods/stargazers) [![总下载](https://img.shields.io/github/downloads/fuguangbeta/banished-mods/total?label=%E6%80%BB%E4%B8%8B%E8%BD%BD&color=2ea44f)](https://github.com/fuguangbeta/banished-mods/releases)
 
@@ -114,13 +114,9 @@ The doctor house now attends to 60 patients instead of 30, which shortens the qu
 
 ### 1.11 隧道优化 · *Tunnel Optimisation*
 
-隧道建在较矮的山坡上时，人走到中段会从地表露出来。原因是隧道中间段没有参与地形处理，人按山坡表面高度行走。这个模组给中间段补上 1×1 的地形处理，人走在线路内部，被上方的岩体挡住；同时允许在被挖过的地面重新修建隧道。
+隧道拆掉之后，原地重新修建会被判定为受阻，因为洞口附近的地块类型在建造时被改写过。这个模组放宽了隧道两端的类型要求，让被挖过的地面也能重新起隧道；其余建造规则保持原版，不会出现平地到处都能修隧道的情况。
 
-另外，处理地形用的网格必须是一格大小 —— 用整段隧道拱顶会连着周围山体一起削平。
-
-On low hills, citizens used to surface in the middle of a tunnel because the interior sections never took part in the terrain pass. This mod gives each section a 1x1 terrain step, so the walk stays under the rock; it also lets a demolished tunnel be rebuilt on the same spot.
-
-The mesh used for that step has to be one tile wide; using the tunnel arch instead carves the surrounding mountain as well.
+A demolished tunnel used to be impossible to rebuild on the same spot, because the ground near the portal changes type during construction. This mod relaxes the tile requirement at the tunnel ends so carved ground still counts, while leaving every other rule untouched.
 
 ### 1.12 渔场范围提升 · *Bigger Fishing Radius*
 
