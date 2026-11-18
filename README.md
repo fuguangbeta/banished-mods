@@ -44,7 +44,7 @@ All thirteen files live in mods/.
 | herbregrow.pkm | 草药再生 | 草药随林木自然生长，幼林亦能出产；单次收获 4~5 |
 | schoolcapacity.pkm | 学校容量提升 | 学校在册学生上限 20→40 |
 | hospitalcapacity.pkm | 医院容量提升 | 诊所收治病人上限 30→60 |
-| tunneloptimize.pkm | 隧道优化 | 修复隧道中段穿模，并允许拆除后原位重建 |
+| tunneloptimize.pkm | 隧道优化 | 隧道拆除后可在原处重新修建 |
 | fishdockradius.pkm | 渔场范围提升 | 渔业码头作业半径 14→20（覆盖面积约 2 倍） |
 
 ---
@@ -117,7 +117,6 @@ The doctor house now attends to 60 patients instead of 30, which shortens the qu
 隧道拆掉之后，原地重新修建会被判定为受阻，因为洞口附近的地块类型在建造时被改写过。这个模组放宽了隧道两端的类型要求，让被挖过的地面也能重新起隧道；其余建造规则保持原版，不会出现平地到处都能修隧道的情况。
 
 A demolished tunnel used to be impossible to rebuild on the same spot, because the ground near the portal changes type during construction. This mod relaxes the tile requirement at the tunnel ends so carved ground still counts, while leaving every other rule untouched.
-
 ### 1.12 渔场范围提升 · *Bigger Fishing Radius*
 
 渔业码头的作业半径原本只有 14 格，是全游戏最小的服务范围，产量因此偏低。扩大到 20 格后，覆盖水面面积约翻倍。
