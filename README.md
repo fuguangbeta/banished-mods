@@ -1,10 +1,10 @@
-# Banished 功能模组合集 v1.2.1
+﻿# Banished 功能模组合集 v1.3.0
 
 [![版本](https://img.shields.io/github/v/release/fuguangbeta/banished-mods?label=%E7%89%88%E6%9C%AC&color=blue)](https://github.com/fuguangbeta/banished-mods/releases) ![游戏](https://img.shields.io/badge/%E6%B8%B8%E6%88%8F-Banished%201.0.7%20%28170910%29-8B5A2B) ![平台](https://img.shields.io/badge/%E5%B9%B3%E5%8F%B0-Windows-0078D4) [![许可](https://img.shields.io/github/license/fuguangbeta/banished-mods?label=%E8%AE%B8%E5%8F%AF)](https://github.com/fuguangbeta/banished-mods/blob/main/LICENSE) [![Star](https://img.shields.io/github/stars/fuguangbeta/banished-mods?label=Star&color=yellow)](https://github.com/fuguangbeta/banished-mods/stargazers) [![总下载](https://img.shields.io/github/downloads/fuguangbeta/banished-mods/total?label=%E6%80%BB%E4%B8%8B%E8%BD%BD&color=2ea44f)](https://github.com/fuguangbeta/banished-mods/releases)
 
 ## 关于本模组 · *About These Mods*
 
-这是一组针对 Banished 1.0.7（build 170910）的轻量玩法调整，一共十二个，每个功能一个独立文件。它们只改动游戏原有的几处数值与组件参数，不新增建筑、不替换贴图、不引入任何外部素材，六个加起来不到 30 KB。
+这是一组针对 Banished 1.0.7（build 170910）的轻量玩法调整，一共十三个，每个功能一个独立文件。它们只改动游戏原有的几处数值与组件参数，不新增建筑、不替换贴图、不引入任何外部素材，十三个加起来不到 300 KB。
 
 设计上刻意保持「一个功能一个开关」：想要什么就放什么进去，不想要直接删掉对应文件，彼此之间没有依赖。模组一旦做成合集，用户就很难只留其中一两项；拆开之后，取舍权在自己手里。
 
@@ -14,11 +14,11 @@
 
 地形工具是这组里唯一需要动手操作的功能。它借用了游戏里采石场那套「建成即重塑地形」的机制，用 1×1 的模板把改动范围压到单格，从而绕开原版「坡度太大不能建造」的限制。用法和边界在第 3 节写清楚了，建议先读一遍。
 
-This is a small set of gameplay tweaks for Banished 1.0.7 (build 170910): six mods, one file each. They only change a handful of existing values and component parameters, with no new buildings, no replacement textures and no external assets, so the whole set stays under 30 KB.
+This is a small set of gameplay tweaks for Banished 1.0.7 (build 170910): thirteen mods, one file each. They only change a handful of existing values and component parameters, with no new buildings, no replacement textures and no external assets, so the whole set stays under 30 KB.
 
 The design keeps one feature per switch on purpose: drop in what you want, delete what you do not, and nothing depends on anything else. Mod packs tend to remove that choice; keeping the files separate keeps it with you.
 
-All six share one premise: **changes apply only to things built afterwards**. A storage barn already placed does not grow, and a tombstone already in the ground does not expire sooner. That is how the saves work, not a limitation added here.
+All of them share one premise: **changes apply only to things built afterwards**. A storage barn already placed does not grow, and a tombstone already in the ground does not expire sooner. That is how the saves work, not a limitation added here.
 
 One thing worth stating up front: these mods work by overriding vanilla templates, so they conflict with anything that touches the same content. Large overhaul packs such as MegaMod or Colonial Charter will almost certainly not work alongside them. See section 5.
 
@@ -27,9 +27,9 @@ The terrain tools are the only part that needs hands-on use. They borrow the qua
 ---
 ## 1. 模组清单 · *Mod List*
 
-十二个文件都放在 mods/ 目录下。
+十三个文件都放在 mods/ 目录下。
 
-All twelve files live in mods/.
+All thirteen files live in mods/.
 
 | 文件 · File | 名称 · Name | 改动 · What it changes |
 |---|---|---|
@@ -40,7 +40,8 @@ All twelve files live in mods/.
 | terratools.pkm | 地形工具 | 三个 1×1 工具：抬高 1 格 / 降低 1 格 / 整平 |
 | tombstonehalf.pkm | 墓碑留存时间减半 | 墓碑寿命 60→30 个月，容差 12→6 |
 | tooldurability.pkm | 工具寿命提升 | 铁质工具耐久 100→200、钢制 200→400 |
-| clothingwarmth.pkm | 衣物抗寒提升 | 每月受寒量 无衣 12 / 普通 8→6 / 冬衣 5→3 |
+| citizen.pkm | 市民体质 | 受寒量 12/6/3；野外/道路/石板路速度 0.67/1.34/1.67 |
+| herbregrow.pkm | 草药再生 | 草药随林木自然生长，幼林亦能出产；单次收获 4~5 |
 | schoolcapacity.pkm | 学校容量提升 | 学校在册学生上限 20→40 |
 | hospitalcapacity.pkm | 医院容量提升 | 诊所收治病人上限 30→60 |
 | tunneloptimize.pkm | 隧道优化 | 修复隧道中段穿模，并允许拆除后原位重建 |
@@ -94,12 +95,11 @@ Tombstones stand for 60 months by default, which fills cemeteries quickly. At 30
 
 Iron and steel tools both last twice as long: iron from 100 to 200, steel from 200 to 400. The value is how much work a tool provides, so a single tool covers twice as much before it wears out.
 
-### 1.8 衣物抗寒提升 · *Warmer Clothing*
+### 1.8 市民体质 · *Citizen Constitution*
 
-居民每月受寒量从「无衣 12 / 普通衣物 8 / 冬季大衣 5」调整为「12 / 6 / 3」。无衣状态保持不变，穿上衣服之后冬天能在室外待更久，冬季大衣的差距也拉开了。
+把居民的两项体质参数一起调整：受寒量变成「无衣 12 / 普通衣物 6 / 冬季大衣 3」，冬天穿衣服能在室外待更久；行走速度变成野外 0.67、道路 1.34、石板路 1.67，野地与道路的差距拉开，市民更愿意绕远走大路。
 
-Monthly cold gain changes from 12 / 8 / 5 for no clothing, normal coats and winter coats to 12 / 6 / 3. Unclothed citizens are unaffected; clothed ones stay outside longer in winter.
-
+Two citizen values move together: monthly cold gain becomes 12 / 6 / 3 for no clothing, normal coats and winter coats, and walk speeds become 0.67 off-road, 1.34 on dirt roads and 1.67 on stone roads, so citizens prefer a longer paved route to a short cut through the fields.
 ### 1.9 学校容量提升 · *Bigger School*
 
 一所学校同时容纳的学生从 20 人提到 40 人。一位老师能带更多学生，教育铺开得更快，孩子不用排队等学位。
@@ -125,6 +125,13 @@ A demolished tunnel used to be impossible to rebuild on the same spot, because t
 The fishing dock works on a 14-tile radius, the smallest service area in the game, which kept its yield low. At 20 tiles the covered water roughly doubles.
 
 ---
+### 1.13 草药再生 · *Herb Regrowth*
+
+草药不再只靠地图生成时的老林，任何树林长到四个月左右就会开始自然带出草药，采空的林地会随着林木生长慢慢恢复；单次采集可得四到五株。
+
+Herbs are no longer limited to the old growth the map starts with: once a forest is about four months old it begins to produce them, so harvested ground recovers as the trees mature. A single harvest yields four to five.
+
+---
 ## 2. 安装与卸载 · *Installation and Removal*
 
 ### 2.1 安装步骤 · *Steps*
@@ -147,9 +154,9 @@ The path looks like D:/Banished/WinData/. Copying a file in installs it; deletin
 
 ### 2.2 卸载 · *Removal*
 
-删掉 WinData 下对应的 .pkm 即可。十二个文件互不依赖，可以只删其中一个。
+删掉 WinData 下对应的 .pkm 即可。这些文件互不依赖，可以只删其中一个。
 
-Delete the matching .pkm from WinData. The six files do not depend on each other, so removing one leaves the rest working.
+Delete the matching .pkm from WinData. The files do not depend on each other, so removing one leaves the rest working.
 
 已经建好的建筑不会因为卸载而丢失，只是新建的恢复原版数值。
 
@@ -242,17 +249,17 @@ The optional/exe-patch/ folder ships a patcher:
 
 **This repository does not ship a patched executable.** The patch applies to 1.0.7 build 170910 only.
 
-不打这个补丁也可以正常使用其它五个模组，只是资源上限停在 999999。
+不打这个补丁也可以正常使用其它模组，只是资源上限停在 999999。
 
-The other five mods work fine without the patch; the limit simply stays at 999999.
+The other mods work fine without the patch; the limit simply stays at 999999.
 
 ---
 
 ## 5. 兼容性 · *Compatibility*
 
-十二个模组都通过覆盖原版模板实现，所以只要别的模组改了同一处内容，就会冲突。
+十三个模组都通过覆盖原版模板实现，所以只要别的模组改了同一处内容，就会冲突。
 
-All six work by overriding vanilla templates, so any mod that touches the same content will conflict.
+All of them work by overriding vanilla templates, so any mod that touches the same content will conflict.
 
 | 模组 · Mod | 冲突对象 · Conflicts with |
 |---|---|
@@ -262,7 +269,8 @@ All six work by overriding vanilla templates, so any mod that touches the same c
 | 资源上限提升 | 任何修改资源上限输入框的模组 |
 | 墓碑留存时间减半 | 任何修改墓碑的模组 |
 | 工具寿命提升 | 任何修改工具类物品的模组 |
-| 衣物抗寒提升 | 任何修改居民受寒量的模组 |
+| 市民体质 | 任何修改居民受寒量或移动速度的模组 |
+| 草药再生 | 任何修改草药、野生植物或林木刷新规则的模组 |
 | 学校容量提升 | 任何修改学校建筑的模组 |
 | 医院容量提升 | 任何修改诊所建筑的模组 |
 | 隧道优化 | 任何修改隧道建造规则或隧道分段模板的模组 |
